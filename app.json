@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/brandInfo/brandInfo",
+    "pages/goodsInfo/goodsInfo",
+    "pages/logs/logs"     
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#D80000",
+    "navigationBarTitleText": "八府堂男性保健",
+    "navigationBarTextStyle":"white"
+    
+  },
+  "tabBar": {
+    "selectedColor": "red",
+    "backgroundColor": "white",   
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "selectedIconPath":"resources/home_curr.png",
+        "iconPath": "resources/icon_home.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "联系我们",
+        "selectedIconPath":"resources/ser_curr.png",
+        "iconPath": "resources/icon_ser.png"
+       
+      }
+    ]
+  },
+  "debug": true
+  
+}

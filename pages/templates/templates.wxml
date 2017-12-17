@@ -1,0 +1,11 @@
+
+
+<template name="cusSerTemp" >
+  <view class="csimgbox">
+  
+ <image class='csimgbox'src="../../resources/wxCustomerService.png" mode=""></image>
+  <contact-button  class="" style="position: relative;left:30rpx;top:30rpx;opacity: 0" type="default-dark"   size="18"  session-from="weapp">
+    
+  </contact-button>
+</view>
+</template>

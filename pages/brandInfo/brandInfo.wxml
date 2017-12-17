@@ -1,0 +1,29 @@
+<import src="../templates/templates.wxml"/>
+
+<scroll-view class='scroll-view' bindscroll="" scroll-y='true' style="height:100%;">
+	<view style="width: 100%">
+		<view class="title">  关于我们</view>
+		<view class='content'>广州汉森生物科技有限公司成立于2012年，目前主打品牌是八府堂。公司以传统文化为底蕴，依托古代中医药方，结合现代生物技术，专注男性健康，传播大健康理念，争做大健康行业翘楚。
+        </view>
+        <view class="content">
+        	公司坚持追求高品质，高服务。拥有雄厚的技术支持和强有力的品牌宣传，时代变化万千，公司坚持与时俱进，紧随时代脚步，致力于打造微商行业的超级战舰。
+
+        </view>
+	    <view class="content">
+	   我们以“为顾客提供优质的产品和服务，为代理打造稳定可靠的可持续发展平台为使命！” 
+	   永远保持热情！永远不停止追求！永远不言放弃！做到公平、公开、公正、民主、开放、合作、共赢！
+
+	   做良心产品，树百年品牌！
+		</view>
+		
+		<view class="title">微商春晚发起人</view>
+		
+		<image class='content-img' src="http://www.bafutang.cn/upfiles/201605/07/aa5a2a603055335f7.jpg" mode=''></image>
+		<view class="title">品牌广告签约仪式</view>
+        <image class="content-img" src="http://www.bafutang.cn/upfiles/201605/07/ac2c5a91d9af270d3.jpg"></image>
+        <view class="title">厂家签约仪式</view>
+        <image class="content-img" src="http://www.bafutang.cn/upfiles/201605/07/a7033c1537a0795cb.jpg"></image>
+</view>
+
+</scroll-view>	
+<template is="cusSerTemp" />

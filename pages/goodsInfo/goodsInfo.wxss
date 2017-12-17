@@ -1,0 +1,5 @@
+@import "../templates/templates.wxss"
+image{
+  width: 100%;
+  
+}

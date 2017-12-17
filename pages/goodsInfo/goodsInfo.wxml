@@ -1,0 +1,5 @@
+<import src="../templates/templates.wxml"/>
+
+<image src="{{goodsInfo.goodsImgUrl}}" mode='widthFix'></image>
+
+<template is="cusSerTemp" />

@@ -1,0 +1,61 @@
+<import src="../templates/templates.wxml"/>
+
+
+<scroll-view class='scroll-view' bindscroll="" scroll-y='true' style="height:100%;">
+
+  <view class="recommend">
+    <view class="swiper-container">
+      <swiper interval="5000" duration="1000" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+        <block wx:for="{{slider}}" wx:key="unique">
+          <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">
+            <image src="{{item.picUrl}}" class="img" mode='aspectFill' bindtap='swiperImageTap'></image>
+            
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="dots">
+        <block wx:for="{{slider}}" wx:key="unique">
+          <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">{{index+1}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!--导航条-->
+  <view class="navbar">
+    
+  <block wx:for="{{navbar}}" wx:key="unique">
+      <view class="item" bindtap="{{item.onNavBarTap}}" data-text="{{item.text}}"  >
+      <image class='' src='{{item.background}}' mode='aspectFit'></image>
+      <view class='item-opacity' > </view>
+        <view class='item-top'>
+        <text class='nav-text'>{{item.text}}</text>
+        </view>
+      </view>
+    
+  </block>
+  </view>
+
+  <!--产品展示  -->
+  <view class="product-list-container">
+    <view class='list-title'>热销产品</view>
+    <view class="product-list" wx:for="{{productList}}" wx:key="id">
+        <view class='list-item' bindtap='productItemTap'  id="{{index}}">
+          <view class="item-box">
+          <view class='product-img-box'>
+          <image class='product-img' src="{{item.productPicUrl }}"    mode='aspectFit'></image></view>
+          
+          <view class='product-info'>{{item.productDesc}}</view>
+          <view class="to-detail">了解详情>>></view>
+          </view>
+        </view>
+    </view>
+    
+  </view>
+  
+</scroll-view>
+<template is="cusSerTemp" />
+
+
+
+

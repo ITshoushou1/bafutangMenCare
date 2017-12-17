@@ -1,0 +1,9 @@
+.csimgbox{
+  position: fixed;
+  bottom: 10rpx;
+  right:-10rpx;
+  height: 100rpx;
+  width: 100rpx;
+  opacity: 0.7;
+ border-radius: 25rpx
+}

@@ -1,0 +1,133 @@
+
+@import "../templates/templates.wxss"
+
+/* 轮播图 */
+.swiper-container{  
+  position: relative; 
+ 
+}  
+.swiper-container .swiper{  
+  height: 350rpx;  
+  
+}  
+.swiper-container .swiper .img{  
+  width: 100%;  
+  height: 100%;  
+
+}  
+.swiper-container .dots{  
+  position: absolute;  
+  right: 40rpx;  
+  bottom: 20rpx;  
+  display: flex;  
+  justify-content: center;  
+  opacity: 1;
+}  
+.swiper-container .dots .dot{  
+  margin: 0 10rpx;  
+  width: 28rpx;  
+  height: 28rpx;  
+  background: #fff;  
+  border-radius: 50%;  
+  transition: all .6s;  
+  font: 300 18rpx/28rpx "microsoft yahei";  
+  text-align: center;  
+  opacity: 1;
+}  
+.swiper-container .dots .dot.active{  
+  background: #f80;  
+  color:#fff;  
+} 
+/* 导航 */
+.navbar{  
+  flex: none;  
+  display: flex;  
+  background: #fff;  
+  height:200rpx;
+  flex-wrap: nowrap;
+  justify-content: center;
+}  
+.navbar .item{  
+  position: relative;  
+  width: 230rpx;
+  height: 70%;
+  margin: auto;
+  
+}  
+.navbar .item image{
+ border-radius: 25rpx;
+ 
+  width:100%;
+ height:100%;
+}
+.navbar .item .item-opacity{  
+   position: absolute; 
+  /* margin:40rpx 22rpx; */
+  width:100%;
+  height: 100%;
+  color: whitesmoke;
+  top: 0px;
+  background-color: #777;
+  opacity: 0.3;
+ border-radius: 25rpx
+  
+}  
+.navbar .item .item-top{
+  position: absolute; 
+  top: 0px;
+  text-align: center; 
+  line-height:150rpx;
+  color:white;
+  width: 100%;
+}
+.product-list-container{
+  background-color: white;
+  margin-top: 15rpx;
+}
+
+.list-title{
+  height: 100rpx;
+  text-align: left;
+  line-height: 100rpx;
+  color: red;
+  padding-left: 20rpx;
+  border-bottom: 2rpx solid #777
+  
+}
+.list-item{
+  height: 500rpx;
+  border-bottom: 2rpx solid #cdcdcd;
+  
+}
+.item-box{
+  width:90%;
+  margin: auto;
+  overflow: hidden;
+  
+}
+.product-img{
+  height: 100%;
+  width:100%
+}
+.product-img-box{
+  width:100%;
+  height:400rpx;
+}
+.product-info{
+float: left;
+ line-height: 80rpx;
+ font-size: 35rpx;
+ left: 20rpx;
+ width:60%;
+}
+.to-detail{
+ float: right;
+ color: green;
+ font-size: 30rpx;
+ line-height: 80rpx
+}
+
+
+
+
+
