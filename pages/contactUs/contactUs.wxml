@@ -1,0 +1,33 @@
+<import src="../templates/templates.wxml"/>
+
+
+<view style='height:100%;overflow:auto'>
+  <view class="about-head">
+    <image src="{{bacImg}}" mode="scaleToFill"></image>
+
+  </view>
+  <view class="about-list">
+  
+    <view class="about-list-item">
+    	<text class='item-text'> 联系电话：</text>
+		<view class='textbox ' hover-class='itemclick' hover-start-time='0' hover-stay-time="100" bindtap="phoneTap"> 
+		        <image src='../../resources/phone.png'></image>
+		        <text> {{phonenumber}}</text>
+		      </view>
+		</view>
+
+    <view class="about-list-item">
+    	<text class="item-text">加微信：</text>
+    <view class='textbox' hover-class='itemclick'  hover-start-time='0' hover-stay-time="100" bindtap="wexinTap">
+        <image src='../../resources/weixin.png'></image>
+        <text> {{weixinhao}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<template is="cusSerTemp" />
+ <view style="height:44px;width:100%;background-color:#1e1e1e;text-align:center;font-size:25rpx;font-weight:100;color:white;line-height:44px;position:absolute;bottom:0;z-index:-10" bindtap='onMytap'>
+    <text style=''>小程序由瘦瘦设计开发</text>
+   <image src="../../resources/shoushouweixin.png" style="height:32px;width:32px;vertical-align: middle;margin-top: -4px;" mode="" ></image>微信：my---344361015
+   </view>

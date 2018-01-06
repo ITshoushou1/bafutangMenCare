@@ -1,11 +1,18 @@
 //app.js
+var util = require('utils/util.js');
 App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+     var now = new Date();
+     var now = util.formatTime(now);
+    console.log(now);
+    //版本控制
+     if (now < this.globalData.versionDate) {
+        this.globalData.showMyVeseion=false;
+     }
     // 登录
     wx.login({
       success: res => {
@@ -33,8 +40,11 @@ App({
       }
     })
   },
+  //showMyVersion 设置日期之前不显示我的版本
   globalData: {
     userInfo: null,
+    versionDate:"2018/01/12",
+    showMyVeseion:true,
     productList: [
     {
       productPicUrl: '../../resources/images/duliyc.jpg',

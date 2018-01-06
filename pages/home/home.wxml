@@ -1,61 +1,124 @@
-<import src="../templates/templates.wxml"/>
+<view wx:if="{{showMyVeseion}}">   <import src="../templates/templates.wxml"/>
 
 
-<scroll-view class='scroll-view' bindscroll="" scroll-y='true' style="height:100%;">
+  <scroll-view class='scroll-view' bindscroll="" scroll-y='true'
+  style="height:100%;">
 
-  <view class="recommend">
-    <view class="swiper-container">
-      <swiper interval="5000" duration="1000" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
-        <block wx:for="{{slider}}" wx:key="unique">
-          <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">
-            <image src="{{item.picUrl}}" class="img" mode='aspectFill' bindtap='swiperImageTap'></image>
-            
-          </swiper-item>
-        </block>
-      </swiper>
-      <view class="dots">
-        <block wx:for="{{slider}}" wx:key="unique">
-          <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">{{index+1}}</view>
-        </block>
-      </view>
-    </view>
-  </view>
-
-  <!--导航条-->
-  <view class="navbar">
-    
-  <block wx:for="{{navbar}}" wx:key="unique">
-      <view class="item" bindtap="{{item.onNavBarTap}}" data-text="{{item.text}}"  >
-      <image class='' src='{{item.background}}' mode='aspectFit'></image>
-      <view class='item-opacity' > </view>
-        <view class='item-top'>
-        <text class='nav-text'>{{item.text}}</text>
+    <view class="recommend">   <view class="swiper-container"> <swiper autoplay='true' interval="5000" duration="1000"
+    current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">   <block wx:for="{{slider}}" wx:key="unique">
+    <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">   <image src="{{item.picUrl}}" class="img"
+    mode='aspectFill' bindtap='swiperImageTap'></image>
+              
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="dots">
+          <block wx:for="{{slider}}" wx:key="unique">
+            <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">{{index+1}}</view>
+          </block>
         </view>
       </view>
-    
-  </block>
-  </view>
+    </view>
 
-  <!--产品展示  -->
-  <view class="product-list-container">
-    <view class='list-title'>热销产品</view>
-    <view class="product-list" wx:for="{{productList}}" wx:key="id">
-        <view class='list-item' bindtap='productItemTap'  id="{{index}}">
-          <view class="item-box">
-          <view class='product-img-box'>
-          <image class='product-img' src="{{item.productPicUrl }}"    mode='aspectFit'></image></view>
-          
-          <view class='product-info'>{{item.productDesc}}</view>
-          <view class="to-detail">了解详情>>></view>
+    <!--导航条-->
+    <view class="navbar">
+      
+    <block wx:for="{{navbar}}" wx:key="unique">
+        <view class="item" bindtap="{{item.onNavBarTap}}" data-text="{{item.text}}">
+        <image class='' src='{{item.background}}' mode='aspectFit'></image>
+        <view class='item-opacity' > </view>
+          <view class='item-top'>
+          <text class='nav-text'>{{item.text}}</text>
           </view>
         </view>
+      
+    </block>
+    </view>
+
+    <!--产品展示  -->
+    <view class="product-list-container">
+      <view class='list-title'>热销产品</view>
+      <view class="product-list" wx:for="{{productList}}" wx:key="id">
+          <view class='list-item' bindtap='productItemTap'  id="{{index}}">
+            <view class="item-box">
+            <view class='product-img-box'>
+            <image class='product-img' src="{{item.productPicUrl }}"    mode='aspectFit'></image></view>
+            <image src="../../resources/zan.png" class="zan" mode='widthFix' ></image>
+            <view class='product-info'>{{item.productDesc}}</view>
+            <view class="to-detail">了解详情>>></view>
+            </view>
+          </view>
+      </view>
+      
     </view>
     
-  </view>
-  
-</scroll-view>
-<template is="cusSerTemp" />
+  </scroll-view>
+  <template is="cusSerTemp" />
 
+   <view style="height:44px;width:100%;background-color:#1e1e1e;text-align:center;font-size:25rpx;font-weight:100;color:white;line-height:44px;bottom:0;z-index:-10" bindtap='onMytap'>
+      <text style=''>小程序由瘦瘦设计开发</text>
+      <image src="../../resources/shoushouweixin.png" style="height:32px;width:32px;vertical-align: middle;margin-top: -4px;" mode="" ></image>微信：my---344361015
+   </view>
+</view>
 
+<view wx:else>
+    <!--index.wxml-->
+    <view class="page">
+      <!--顶部滚动-->
+      <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000"> 
+          <block wx:for="{{swiper}}" wx:for-item="swiper" wx:key="">
+            <swiper-item>
+              <image src="{{img800}}/{{swiper}}?version={{version}}" mode="aspectFill" class="swiper-image"  />
+            </swiper-item>  
+          </block> 
+      </swiper>
 
+      <!--筛选-->
+       <view class="choose-wrap vc">
+        <view class="choose-item cc" data-tab="1" bindtap="chooseItemClick">
+          <block wx:if="{{currentTab==1}}">
+            <text class="choose-item-label choose-item-selected" >全部</text>
+          </block>
+          <block wx:else>
+            <text class="choose-item-label" >全部</text>
+          </block>
+        </view>
+        <view class="choose-item-divider">|</view>
+        <view class="choose-item cc" data-tab="2" bindtap="chooseItemClick">
+          <block wx:if="{{currentTab==2}}">
+            <text class="choose-item-label choose-item-selected" >热门</text>
+          </block>
+          <block wx:else>
+            <text class="choose-item-label" >热门</text>
+          </block>
+        </view>
+        <view class="choose-item-divider">|</view>
+        <view class="choose-item cc" data-tab="3" bindtap="chooseItemClick">
+          <block wx:if="{{currentTab==3}}">
+            <text class="choose-item-label choose-item-selected">最新</text>
+          </block>
+          <block wx:else>
+            <text class="choose-item-label" >最新</text>
+          </block>
+        </view>
+      </view>
 
+      <!--listview数据--> 
+      <block wx:for="{{products}}" wx:for-item="product" wx:key="p_id">
+        <!--一条-->
+        <view class="list-item1" data-id="{{product.p_id}}" bindtap="itemClick">
+          <view class="list-item-left"> 
+            <image class="list-item-left-icon" src="{{img220}}/{{product.p_icon}}?version={{version}}"></image>
+          </view>
+          <view class="list-item-right"> 
+            <view class="item-name cc">{{product.p_title}}</view>
+            <view class="item-desc cc">{{product.p_summary}}</view>
+            <view class="item-price cc ">￥{{product.p_priceA}}</view>
+            <view class="item-duration cc">{{product.p_duration}}分钟</view>
+          </view>
+        </view> 
+      </block>
+
+    </view>   
+
+</view>

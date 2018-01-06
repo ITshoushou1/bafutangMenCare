@@ -1,5 +1,4 @@
-@import "../templates/templates.wxss"
+@import "../templates/templates.wxss";
 image{
-  width: 100%;
-  
+  width:100%;
 }
