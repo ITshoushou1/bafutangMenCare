@@ -1,5 +1,40 @@
 <import src="../templates/templates.wxml"/>
 
+<view style="width:95%;margin:auto"> 
+	<view style="text-align: center ;font-size:40rpx;font-weight:400;"> {{goodsInfo.name}}</view>
+	<view wx:if="{{goodsInfo.characteristic!=''}}">
+		<view style="text-align:left;font-size:30rpx;color:#606060; font-weight:500;font-family:'黑体'">产品特性</view>
+        <view style="text-align:left;font-size:25rpx;color:#999966;">
+        	<text>{{goodsInfo.characteristic}}</text>
+        </view>
+    </view>
+
+    <view wx:if="{{goodsInfo.productFunction!=''}}">
+		<view style="text-align:left;font-size:30rpx;color:#606060; font-weight:500;font-family:'黑体'">产品功效</view>
+        <view style="text-align:left;font-size:25rpx;color:#999966;">
+        	<text>{{goodsInfo.productFunction}}</text>
+        </view>
+    </view>
+   
+    <view wx:if="{{goodsInfo.containsImg!='' || goodsInfo.contains.length>0}}">
+		<view style="text-align:left;font-size:30rpx;color:#606060; font-weight:500;font-family:'黑体'">成分详解</view>
+		<view wx:if="{{goodsInfo.containsImg!=''}} ">
+			<image src="{{goodsInfo.containsImg}}" mode="widtFix"></image>
+		</view>
+		<view wx:if="{{goodsInfo.containsImg!=''}} ">
+			 <block wx:for="{{goodsInfo.contains}}" wx:for-item="contain" wx:key="unique">
+	    	   <view style="color: red;font-size:28rpx" >{{contain.name}} </view>
+	    	   <view style="text-align:left;font-size:25rpx;color:#999966;">
+	    	   	 <text>{{contain.desc}}</text> 
+	    	   	</view>
+	    	</block>
+		</view>
+       
+    </view>
+
+
+</view>
+  
 <image src="{{goodsInfo.goodsImgUrl}}" mode='widthFix'></image>
 
 <template is="cusSerTemp" />

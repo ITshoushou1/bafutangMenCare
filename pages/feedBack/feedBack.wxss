@@ -18,7 +18,7 @@
 
 }
 .slide-bar view{
-    width:50%;
+    width:100%;
     background-color: black;
     line-height: 100rpx;
     font-size: 30rpx;
@@ -55,7 +55,7 @@
     text-align: left;
     padding: 10rpx;
     font-weight:100;
-    opacity: 0.7
+    opacity: 0.9
 }
 .feedback-img{
   width:92.5%;

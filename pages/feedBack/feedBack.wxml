@@ -1,17 +1,20 @@
 <import src="../templates/templates.wxml"/>
 
 <image src='../../resources/images/backImg.jpg' mode='widthFix' style='position:fixed;top:0;left:0;width:100%;height:100%'></image>
-
-<scroll-view  scroll-x="true" class="slide-bar">
+<swiper autoplay='true' interval="5000" duration="1000" 
+    current="{{swiperCurrent}}" class="slide-bar">
      <block wx:for-items="{{items.li}}" wx:key="item">
-		<block wx:if="{{item.cur}}">
-			<view bindtap="changeSlide" data-index="{{index}}" class="slide-bar-cur">{{item.name}}</view>
-		</block>
-		<block wx:else>
-			<view bindtap="changeSlide" data-index="{{index}}">{{item.name}}</view>
-		</block>
+     <swiper-item style="width:50%"> 
+    	   	<block wx:if="{{item.cur}}">
+    			<view bindtap="changeSlide" data-index="{{index}}"           class="slide-bar-cur">{{item.name}}</view>
+    		</block>
+    		<block wx:else>
+    			<view bindtap="changeSlide" data-index="{{index}}">{{item.name}}    </view>
+    		</block>
+    </swiper-item>
+    
 	</block> 
- </scroll-view>
+ </swiper>
 
   <scroll-view class='scroll-view' bindscroll="" scroll-y='true' style="height:100%;background-color:black;">
 

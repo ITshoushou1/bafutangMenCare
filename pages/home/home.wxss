@@ -55,7 +55,6 @@
 }  
 .navbar .item image{
  border-radius: 25rpx;
- 
   width:100%;
  height:100%;
 }
@@ -67,7 +66,7 @@
   color: whitesmoke;
   top: 0px;
   background-color: #777;
-  opacity: 0.3;
+  opacity: 0.5;
  border-radius: 25rpx
   
 }  
@@ -131,7 +130,6 @@ float: left;
   float: left;
   padding-right: 10rpx;
 }
-
 
 
 
@@ -212,3 +210,8 @@ image,view{
   font-size: 12px;
 }
 /**每一条的**/
+
+
+
+
+
